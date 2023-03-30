@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features="src/test/resources/features",
         glue= {"stepdefinitions", "hooks"},
-        tags="@TC01_Api"  ,
+        tags="@e2e",
 
         dryRun= false
 

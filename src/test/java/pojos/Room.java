@@ -6,14 +6,14 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 public class Room {
     private String description;
     private Integer price;
-    private Integer roomNumber;
+    private Float roomNumber;
     private String roomType;
     private Boolean status;
 
     public Room() {
     }
 
-    public Room(String description, Integer price, Integer roomNumber, String roomType, Boolean status) {
+    public Room(String description, Integer price, Float roomNumber, String roomType, Boolean status) {
         this.description = description;
         this.price = price;
         this.roomNumber = roomNumber;
@@ -37,12 +37,12 @@ public class Room {
         this.price = price;
     }
 
-    public Integer getRoomNumber() {
+    public Float getRoomNumber() {
         return roomNumber;
     }
 
     public void setRoomNumber(Integer roomNumber) {
-        this.roomNumber = roomNumber;
+        this.roomNumber = Float.valueOf(roomNumber);
     }
 
     public String getRoomType() {

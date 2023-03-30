@@ -19,4 +19,13 @@ public class AuthenticationMedunna {
         //response.prettyPrint();
         return response.jsonPath().getString("id_token");
     }
+    public static String sdgenerateToken(){
+        Map<String ,Object> body=new HashMap<>();
+        body.put("password", "tuba_hayati123");
+        body.put("rememberMe", true);
+        body.put("username", "tuba_hayati");
+        Response response=given().contentType(ContentType.JSON).body(body).post("https://medunna.com/api/authenticate");//spec kullanmadıgımız icin content type belirtiyoruz
+        //response.prettyPrint();
+        return response.jsonPath().getString("id_token");
+    }
 }

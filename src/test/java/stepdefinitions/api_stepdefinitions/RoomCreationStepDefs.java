@@ -25,7 +25,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RoomCreationStepDefs {
     Response response;
-   float roomNumber = Faker.instance().number().numberBetween(1000, 1000000);
+    int roomNumber = Faker.instance().number().numberBetween(1000, 1000000);
     Room expectedData;
 
     @Given("user sends post request for room data")
@@ -56,7 +56,7 @@ public class RoomCreationStepDefs {
 
         //2. Validation
         JsonPath jsonPath = response.jsonPath();
-        assertEquals(Optional.ofNullable(expectedData.getRoomNumber()), jsonPath.getInt("roomNumber"));
+        assertEquals((int) expectedData.getRoomNumber(), jsonPath.getInt("roomNumber"));
         assertEquals(expectedData.getRoomType(), jsonPath.getString("roomType"));
         assertEquals(expectedData.getStatus(), jsonPath.getBoolean("status"));
         assertEquals((int) expectedData.getPrice(), jsonPath.getInt("price"));

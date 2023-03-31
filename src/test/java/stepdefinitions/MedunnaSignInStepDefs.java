@@ -1,4 +1,4 @@
-package stepdefinitions.api_stepdefinitions;
+package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -19,7 +19,7 @@ public class MedunnaSignInStepDefs {
 
     @When("click on Sign In option")
     public void click_on_sign_in_option() {
-       // ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();","login-item");
+
         medunnaHomePage.signInOption.click();
     }
 
